@@ -19,6 +19,11 @@ class user{
         $this->db = new connect();
     }
 
+    function getUserList() {
+        $select = "SELECT * FROM `user`";
+        $result = $this->db->getList($select);
+        return $result;
+    }
 	function getUser($param)
     {
         $select = "SELECT * FROM `user` WHERE `username` = '".$param['username']."' AND `password` = '".$param['password']."'";
@@ -33,7 +38,7 @@ class user{
     }
 
     function addUser($param){
-        $sql = "INSERT INTO `user`(`user_id`, `full_name`, `username`, `password`, `phone`, `gender`, `birthday`, `email`, `address`, `avatar`, `pincode`, `role`)"
+        $sql = "INSERT INTO `user`(`full_name`, `username`, `password`, `phone`, `gender`, `birthday`, `email`, `address`, `avatar`, `pincode`, `role`)"
                 . "VALUES ('".$param['full_name']."', "
                 . "'".$param['username']."', "
                 . "'".$param['password']."', "
@@ -47,7 +52,7 @@ class user{
                 . "'".$param['role']."');";
         $this->db->exec($sql);
     }
-    function update($param) {
+    function updateUser($param) {
         $sql = "UPDATE `user` SET `full_name`=".$param['full_name'].",`username`=".$param['username'].",`password`=".$param['password'].",`phone`=".$param['phone'].",`gender`=".$param['gender'].",`birthday`=".$param['birthday'].",`email`=".$param['email'].",`address`=".$param['address'].",`avatar`=".$param['avatar'].",`pincode`=".$param['pincode'].",`role`=".$param['role']." WHERE  `user_id` = " . $param['user_id'] . ";";
         if (isset($param['password']) && !empty($param['password'])) :
             $sql .= ", `password` = '" . $param['password'] . "' ";

@@ -47,7 +47,7 @@ $(document).ready(function() {
            <div id="content" class="col-sm-9">      
            <h1>Đăng Kí Tài Khoản</h1>
       <p>Nếu bạn đã đăng kí tài khoản, vui lòng đăng nhập tại <a href="dangnhap.php">đây</a>.</p>
-<form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+<form action="../controller/index.php?action=signup" method="post" enctype="multipart/form-data" class="form-horizontal">
         <fieldset id="account">
           <legend>Thông tin cá nhân</legend>
           <div class="form-group required" style="display: none;">
@@ -61,47 +61,75 @@ $(document).ready(function() {
             </div>
           </div>
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-firstname">Tên</label>
+            <label class="col-sm-2 control-label" for="input-full_name">Họ và Tên</label>
             <div class="col-sm-10">
-              <input type="text" name="firstname" value="" placeholder="Tên" id="input-firstname" class="form-control" />
+              <input type="text" name="full_name" value="" placeholder="Tên" id="input-full_name" class="form-control" />
             </div>
           </div>
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-lastname">Họ và chữ lót</label>
+            <label class="col-sm-2 control-label" for="input-email">E-Mail</label>
             <div class="col-sm-10">
-              <input type="text" name="lastname" value="" placeholder="Họ và chữ lót" id="input-lastname" class="form-control" />
-            </div>
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-email">Địa chỉ E-Mail</label>
-            <div class="col-sm-10">
-              <input type="email" name="email" value="" placeholder="Địa chỉ E-Mail" id="input-email" class="form-control" />
+              <input type="email" name="email" value="" placeholder="E-Mail" id="input-email" class="form-control" />
                           </div>
           </div>
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-telephone">Điện Thoại</label>
+            <label class="col-sm-2 control-label" for="input-phone">Điện Thoại</label>
             <div class="col-sm-10">
-              <input type="tel" name="telephone" value="" placeholder="Điện Thoại" id="input-telephone" class="form-control" />
+              <input type="number" name="phone" value="" placeholder="Điện Thoại" id="input-phone" class="form-control" />
+                          </div>
+          </div>
+          <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-gender">Giới Tính</label>
+            <div class="col-sm-2">
+              <select class="form-control" name="gender">
+                            <option value="1">Nam</option>
+                            <option value="0">Nữ</option>
+                        </select>
+                      </div>
+                        </div>
+          <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-birthday">Ngày Sinh</label>
+            <div class="col-sm-10">
+              <input type="date" name="birthday" value="" placeholder="Ngày Sinh" id="input-birthday" class="form-control" />
+                          </div>
+          </div>
+          <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-address">Địa Chỉ</label>
+            <div class="col-sm-10">
+              <input type="text" name="address" value="" placeholder="Địa Chỉ" id="input-address" class="form-control" />
+                          </div>
+          </div>
+          <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-pincode">Mã Pin</label>
+            <div class="col-sm-10">
+              <input type="number" name="pincode" value="" placeholder="Mã Pin 4 Số" id="input-pincode" class="form-control" />
                           </div>
           </div>
                   </fieldset>
         <fieldset>
           <legend>Mật khẩu</legend>
           <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-username">Tên Tài Khoản</label>
+            <div class="col-sm-10">
+              <input type="text" name="username" value="" placeholder="Tài Khoản" id="input-username" class="form-control" />
+                          </div>
+          </div>
+          <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-password">Mật Khẩu</label>
             <div class="col-sm-10">
               <input type="password" name="password" value="" placeholder="Mật Khẩu" id="input-password" class="form-control" />
                           </div>
           </div>
-          <div class="form-group required">
+          
+        </fieldset>
+        <!--<script src="//www.google.com/recaptcha/api.js" type="text/javascript"></script>
+<fieldset>
+<div class="form-group required">
             <label class="col-sm-2 control-label" for="input-confirm">Nhập lại Mật Khẩu</label>
             <div class="col-sm-10">
               <input type="password" name="confirm" value="" placeholder="Nhập lại Mật Khẩu" id="input-confirm" class="form-control" />
                           </div>
           </div>
-        </fieldset>
-        <script src="//www.google.com/recaptcha/api.js" type="text/javascript"></script>
-<fieldset>
   <legend>Mã xác thực</legend>
   <div class="form-group required">
         <label class="col-sm-2 control-label">Vui lòng điền mã xác thực bên dưới</label>
@@ -109,7 +137,7 @@ $(document).ready(function() {
       <div class="g-recaptcha" data-sitekey="6LcjiRAUAAAAALOM1SbJgqWm1Xtaj91dzpEbLP8c"></div>
           </div>
       </div>
-</fieldset>
+</fieldset>-->
       <div class="buttons">
           <div class="pull-right">Tôi đã đọc và đồng ý với điều khoản <a class="fancybox" href="#" alt="Chính sách bảo mật"><b>Chính sách bảo mật</b></a>                      
               <input type="checkbox" name="agree" value="1" />

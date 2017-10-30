@@ -2,6 +2,7 @@
 
 include "../model/connect.php";
 include "../model/user.php";
+include "../model/product.php";
 
 session_start();
 if(isset($_GET["action"]))
@@ -18,8 +19,15 @@ $db = new connect();
 switch($action)
 {   
 	case 'home':
-		header('Location:../view/index.php');
+		include '../view/index.php';
 		break;
+
+    case 'admin':
+        include '../view/admin.php';
+        break;
+    case 'admin_product':
+        include '../view/admin_product.php';
+        break;
 
     case 'login':
     	if (isset($_SESSION['login']) && $_SESSION['login'] == TRUE) {
@@ -46,24 +54,24 @@ switch($action)
                 die;
             } else {
                 // Đăng nhập sai tài khoản
-                include '../view/Login.php';
+                include '../view/dangnhap.php';
             }
         } else {
             // Chưa thực hiện đăng nhập
-            include '../view/Login.php';
+            include '../view/dangnhap.php';
         }
         break;
 
     case "logout":
         session_destroy();
-        header('Location:../view/login.php');
+        header('Location:../view/dangnhap.php');
         break;
 
     case "signup":
-        if (isset($_POST['signup'])) {
+        if (isset($_POST)) {
             $user = new user();
             $user->addUser($_POST);
-            header('Location:../view/login.php');
+            header('Location:../view/dangky.php');
         }
         else{
         header('Location: index.php?action=home');}
@@ -76,13 +84,6 @@ switch($action)
         $_SESSION['user'] = $_POST;
         header('Location:../view/updateuser.php');
     	break;
-
-    case 'course':
-        $postdata = file_get_contents("php://input");
-        $request = json_decode($postdata);
-        $href = $request->href;
-        $_SESSION['hrefCourse'] = $href; 
-        break;
 
     case 'logout':
     	unset($_SESSION['errorlogin'], $_SESSION['user'], $_SESSION['id_user']);

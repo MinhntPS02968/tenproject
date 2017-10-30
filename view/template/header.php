@@ -7,8 +7,8 @@
         <nav class="htop col-md-9 pull-right flip inner" id="top">
           <div id="top-links" class="nav pull-right flip">
             <ul>
-                <li><a href="dangnhap.php">Đăng nhập</a></li>
-                <li><a href="dangky.php">Đăng ký</a></li>
+                <li><a href="../view/dangnhap.php">Đăng nhập</a></li>
+                <li><a href="../view/dangky.php">Đăng ký</a></li>
             </ul>
           </div>
           <div class="pull-right flip left-top">
@@ -19,7 +19,7 @@
         </nav>
         <div class="col-table-cel col-md-3 col-sm-4 col-xs-12 inner">
             <div id="logo" style="padding-top:10px;">
-                <a href="#"><img class="img-responsive" src="images/Logo1.png" title="Divine Shop" alt="Divine Shop" /></a></div>
+                <a href="#"><img class="img-responsive" src="../view/images/Logo1.png" title="Divine Shop" alt="Divine Shop" /></a></div>
         </div>
         <div class="col-md-4 col-md-push-5 col-sm-8 col-xs-12 inner">
           <div class="links_contact pull-right flip">

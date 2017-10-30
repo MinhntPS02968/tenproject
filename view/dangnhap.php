@@ -57,6 +57,7 @@
                 <label class="control-label" for="input-password">Mật khẩu:</label>
                 <input type="password" name="password" value="" placeholder="Mật khẩu:" id="input-password" class="form-control" />
                 <a href="#">Quên mật khẩu</a></div>
+                <a href="../controller/index.php?action=admin">admin</a></div>
               <input type="submit" value="Đăng nhập" class="btn btn-primary" />
                           </form>
           </div>
