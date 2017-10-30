@@ -2,14 +2,18 @@
 
 class user{
 
-    var $id = null;
+    var $user_id = null;
+    var $full_name = null;
     var $username = null;
     var $password = null;
-    var $fullname = null;
-    var $email = null; 
+    var $phone = null; 
     var $gender = null;
     var $birthday = null;
+    var $email = null;
+    var $address = null;
     var $avatar = null;
+    var $pincode = null;
+    var $role = null;
 	
 	public function __construct(){
         $this->db = new connect();
@@ -22,31 +26,34 @@ class user{
         return $result;
     }
 
-    function getUserById($id) {
-        $select = "SELECT * FROM `user` WHERE `id` = " . $id ;
+    function getUserById($user_id) {
+        $select = "SELECT * FROM `user` WHERE `user_id` = " . $user_id ;
         $result = $this->db->getInstance($select);
         return $result;
-        var_dump($result);
     }
 
     function addUser($param){
-        $sql = "INSERT INTO `user`( `username`, `password`, `fullname`, `email`, `gender`, `birthday`, `avatar`)"
-                . "VALUES ('".$param['username']."', "
+        $sql = "INSERT INTO `user`(`user_id`, `full_name`, `username`, `password`, `phone`, `gender`, `birthday`, `email`, `address`, `avatar`, `pincode`, `role`)"
+                . "VALUES ('".$param['full_name']."', "
+                . "'".$param['username']."', "
                 . "'".$param['password']."', "
-                . "'".$param['fullname']."', "
+                . "'".$param['phone']."', "
+                . "'".$param['gender']."', "
+                . "'".$param['birthday']."', "
                 . "'".$param['email']."', "
-                . "'', "
-                . "'', "
-                . "'');";
+                . "'".$param['address']."', "
+                . "'".$param['avatar']."', "
+                . "'".$param['pincode']."', "
+                . "'".$param['role']."');";
         $this->db->exec($sql);
     }
     function update($param) {
-        $sql = "UPDATE `user` SET `username` = '" . $param['username'] . "', `password` = '" . $param['password'] . "', `fullname` = '" . $param['fullname'] . "', `email` = '" . $param['email'] . "', `gender` = '" . $param['gender'] . "', `birthday` = '" . $param['birthday'] . "' WHERE `user`.`id` = " . $param['id'] . ";";
+        $sql = "UPDATE `user` SET `full_name`=".$param['full_name'].",`username`=".$param['username'].",`password`=".$param['password'].",`phone`=".$param['phone'].",`gender`=".$param['gender'].",`birthday`=".$param['birthday'].",`email`=".$param['email'].",`address`=".$param['address'].",`avatar`=".$param['avatar'].",`pincode`=".$param['pincode'].",`role`=".$param['role']." WHERE  `user_id` = " . $param['user_id'] . ";";
         if (isset($param['password']) && !empty($param['password'])) :
             $sql .= ", `password` = '" . $param['password'] . "' ";
         endif;
 
-        $sql .= "WHERE `user`.`id` = " . $param['id'] . ";";
+        $sql .= "WHERE  `user_id` = " . $param['user_id'] . ";";
         $this->db->exec($sql);
     }
 }
