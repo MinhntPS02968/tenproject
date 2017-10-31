@@ -10,6 +10,7 @@
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <!--Code Css-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 <link rel="stylesheet" type="text/css" href="css/stylesheet.min.css" />
 <link href="catalog/view/theme/bigshop/stylesheet/owl.carousel.css" type="text/css" rel="stylesheet" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
@@ -57,8 +58,8 @@
                 <label class="control-label" for="input-password">Mật khẩu:</label>
                 <input type="password" name="password" value="" placeholder="Mật khẩu:" id="input-password" class="form-control" />
                 <a href="#">Quên mật khẩu</a></div>
-                <a href="../controller/index.php?action=admin">admin</a></div>
-              <input type="submit" value="Đăng nhập" class="btn btn-primary" />
+                <a href="../controller/index.php?action=admin" class="btn btn-primary">admin</a>
+                <input type="submit" value="Đăng nhập" class="btn btn-primary" />
                           </form>
           </div>
 			    </div>

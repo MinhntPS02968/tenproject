@@ -9,6 +9,7 @@
 <script src="../view/js/bootstrap.min.js" type="text/javascript"></script>
 <link href="../view/catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <!--Code Css-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 <link rel="stylesheet" type="text/css" href="../view/css/stylesheet.min.css" />
 <link href="../view/catalog/view/theme/bigshop/stylesheet/owl.carousel.css" type="text/css" rel="stylesheet" media="screen" />
 <link rel="stylesheet" type="text/css" href="../view/css/font-awesome.min.css">

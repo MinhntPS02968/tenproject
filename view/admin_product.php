@@ -9,6 +9,7 @@
 <script src="../view/js/bootstrap.min.js" type="text/javascript"></script>
 <link href="../view/catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <!--Code Css-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 <link rel="stylesheet" type="text/css" href="../view/css/stylesheet.min.css" />
 <link href="../view/catalog/view/theme/bigshop/stylesheet/owl.carousel.css" type="text/css" rel="stylesheet" media="screen" />
 <link rel="stylesheet" type="text/css" href="../view/css/font-awesome.min.css">
@@ -24,6 +25,9 @@
 
 
 <style type="text/css">
+.panel-body thead td {
+    font-weight: bold;
+}
 body { background-image: url("../view/images/logo.png");
 background-position:top center;
 background-repeat:no-repeat;
@@ -49,18 +53,20 @@ text-transform:uppercase;
 <?php include 'template/headeradmin.php' ?>
 
 <div id="container">
-                    <a href="../view/more-product.php" >add product</a>
-                    <table class="container-fluid" border="1" class="manage">
+            <div class="panel-body"> 
+                <a href="../view/more-product.php" class="btn btn-primary">add product</a>
+                    <table class="table table-striped table-bordered table-list">
                             <thead>
                                 <tr style="text-align: center;">
-                                    <td>Tên Sản Phẩm</td>
-                                    <td>Hình Ảnh</td>
-                                    <td>Mô Tả</td>
-                                    <td>Giá</td>
-                                    <td>Giá Giảm</td>
-                                    <td>Số Lượng</td>
-                                    <td>Thể Loại</td>
-                                    <td>Tình Trạng</td>
+                                    <td class="hidden-xs">Tên Sản Phẩm</td>
+                                    <td class="hidden-xs">Hình Ảnh</td>
+                                    <td class="hidden-xs">Mô Tả</td>
+                                    <td class="hidden-xs">Giá</td>
+                                    <td class="hidden-xs">Giá Giảm</td>
+                                    <td class="hidden-xs">Số Lượng</td>
+                                    <td class="hidden-xs">Thể Loại</td>
+                                    <td class="hidden-xs">Tình Trạng</td>
+                                    <td><em class="fa fa-cog"></em></td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -79,8 +85,8 @@ text-transform:uppercase;
                                         <td><?php echo $item['category_id']; ?></td>
                                         <td><?php echo $item['status']; ?></td>
                                         <td>
-                                            <a href="index.php?action=admin_product&edit=<?php echo $item['product_id']; ?>">Sửa</a> | 
-                                            <a href="index.php?action=admin_product&delete=<?php echo $item['product_id']; ?>">Xóa</a>
+                                            <a href="index.php?action=admin_product&edit=<?php echo $item['product_id']; ?>"class="btn btn-default"><em class="fa fa-pencil"></em></a>   
+                                            <a href="index.php?action=admin_product&delete=<?php echo $item['product_id']; ?>"class="btn btn-danger"><em class="fa fa-trash"></em></a>
                                         </td>
                                     </tr>
                                     <?php
@@ -88,8 +94,7 @@ text-transform:uppercase;
                                 ?>                            
                             </tbody>
                         </table>
-
-    
+            </div>   
 </div>
 
 <!--Footer-->

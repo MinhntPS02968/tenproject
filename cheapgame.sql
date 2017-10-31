@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 30, 2017 lúc 05:40 SA
+-- Thời gian đã tạo: Th10 30, 2017 lúc 03:54 CH
 -- Phiên bản máy phục vụ: 10.1.21-MariaDB
 -- Phiên bản PHP: 7.1.1
 
@@ -32,6 +32,14 @@ CREATE TABLE `categogy` (
   `categogy_status` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Đang đổ dữ liệu cho bảng `categogy`
+--
+
+INSERT INTO `categogy` (`categogy_id`, `categogy_name`, `categogy_status`) VALUES
+(1, 'FPS', 1),
+(2, 'MMO', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +58,13 @@ CREATE TABLE `product` (
   `status` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Đang đổ dữ liệu cho bảng `product`
+--
+
+INSERT INTO `product` (`product_id`, `product_name`, `product_images`, `description`, `price`, `discount_price`, `quantity`, `category_id`, `status`) VALUES
+(1, 'Fifa 18', '../view/images/product3.jpg', 'game bóng đá hay', 500000, 0, 15, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -62,12 +77,21 @@ CREATE TABLE `user` (
   `username` varchar(500) NOT NULL,
   `password` int(50) NOT NULL,
   `phone` int(20) NOT NULL,
+  `gender` int(10) NOT NULL,
+  `birthday` date NOT NULL,
   `email` varchar(500) NOT NULL,
   `address` varchar(1000) NOT NULL,
   `avatar` varchar(1000) NOT NULL,
   `pincode` int(4) NOT NULL,
   `role` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`user_id`, `full_name`, `username`, `password`, `phone`, `gender`, `birthday`, `email`, `address`, `avatar`, `pincode`, `role`) VALUES
+(3, 'Nguyên Văn A', 'test1', 123456, 2147483647, 1, '2017-10-16', 'Agnuyen@gasdaw', '21312sdae2dw', '', 2341, 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -99,17 +123,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `categogy`
 --
 ALTER TABLE `categogy`
-  MODIFY `categogy_id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `categogy_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

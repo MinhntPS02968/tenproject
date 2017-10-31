@@ -9,6 +9,7 @@
 <script src="../view/js/bootstrap.min.js" type="text/javascript"></script>
 <link href="../view/catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <!--Code Css-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 <link rel="stylesheet" type="text/css" href="../view/css/stylesheet.min.css" />
 <link href="../view/catalog/view/theme/bigshop/stylesheet/owl.carousel.css" type="text/css" rel="stylesheet" media="screen" />
 <link rel="stylesheet" type="text/css" href="../view/css/font-awesome.min.css">
@@ -24,6 +25,9 @@
 
 
 <style type="text/css">
+.panel-body thead td {
+    font-weight: bold;
+}
 body { background-image: url("../view/images/logo.png");
 background-position:top center;
 background-repeat:no-repeat;
@@ -49,21 +53,24 @@ text-transform:uppercase;
 <?php include 'template/headeradmin.php' ?>
 
 <div id="container">
-                    <table class="container-fluid" border="1" class="manage">
+                <div class="panel-body"> 
+                    <table class="table table-striped table-bordered table-list">
                             <thead>
                                 <tr style="text-align: center;">
-                                    <td class="col-sm-2">Họ và Tên</td>
-                                    <td class="col-sm-2">E-Mail</td>
-                                    <td>Điện Thoại</td>
-                                    <td>Giới Tính</td>
-                                    <td>Ngày Sinh</td>
-                                    <td class="col-sm-2">Địa Chỉ</td>
-                                    <td>Mã Pin</td>
-                                    <td>Tên Tài Khoản</td>
-                                    <td>Hình ảnh</td>
-                                    <td>Tác vụ</td>
+                                    <td class="hidden-xs">Họ và Tên</td>
+                                    <td class="hidden-xs">E-Mail</td>
+                                    <td class="hidden-xs">Điện Thoại</td>
+                                    <td class="hidden-xs">Giới Tính</td>
+                                    <td class="hidden-xs">Ngày Sinh</td>
+                                    <td class="hidden-xs">Địa Chỉ</td>
+                                    <td class="hidden-xs">Mã Pin</td>
+                                    <td class="hidden-xs">Tên Tài Khoản</td>
+                                    <td class="hidden-xs">Hình ảnh</td>
+                                    <td class="hidden-xs">Tác vụ</td>
+                                    <td><em class="fa fa-cog"></em></td>
                                 </tr>
                             </thead>
+
                             <tbody>
                                 <?php
                                 $user = new user;
@@ -81,9 +88,10 @@ text-transform:uppercase;
                                         <td><?php echo $item['password']; ?></td>
                                         <td><?php echo $item['avatar']; ?></td>
                                         <td><?php echo $item['role']; ?></td>
-                                        <td>
-                                            <a href="index.php?action=admin&edit=<?php echo $item['id']; ?>">Sửa</a> | 
-                                            <a href="index.php?action=admin&delete=<?php echo $item['id']; ?>">Xóa</a>
+                                        <td align="center">
+
+                                            <a href="index.php?action=admin&edit=<?php echo $item['id']; ?>" class="btn btn-default"><em class="fa fa-pencil"></em></a> 
+                                            <a href="index.php?action=admin&delete=<?php echo $item['id']; ?>" class="btn btn-danger"><em class="fa fa-trash"></em></a>
                                         </td>
                                     </tr>
                                     <?php
@@ -91,7 +99,7 @@ text-transform:uppercase;
                                 ?>                            
                             </tbody>
                         </table>
-
+                </div>
     
 </div>
 
