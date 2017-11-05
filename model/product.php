@@ -1,51 +1,75 @@
 <?php
+class product {
+    // var $product_id = null;
+    // var $product_name = null;
+    // var $product_images="../images/";
+    // var $price=null;
+    // var $discount_price=null;
+    // var $category_id=null;
+    // var $detail=null;
 
-class product{
-
-    var $product_id = null;
-    var $product_name = null;
-    var $product_images = null;
-    var $description = null;
-    var $price = null; 
-    var $discount_price = null;
-    var $quantity = null;
-    var $category_id = null;
-    var $status = null;
-	
-	public function __construct(){
-        $this->db = new connect();
+    public function __construct() {}
+    
+    //Thêm sản phẩm
+    public function addProduct($product_name, $product_images, $price, $discount_price, $category_name, $detail){
+        $db = new connect();
+        $db->exec("insert into product values(null, '$product_name', '$product_images', '$price', '$discount_price', '$category_name', '$detail')");
     }
-
-	function getProduct()
+   
+    // Lấy danh sách sản phẩm
+    function getList()
     {
-        $select = "SELECT * FROM `product`";
-        $result = $this->db->getList($select);
+        $db = new connect();
+        $select = "select * from product";
+        $result = $db->getList($select);
+        return $result;
+    }
+    
+    // Lấy danh sách sản phẩm theo trang   
+    function getListPage($from,$to)
+    {
+        $db = new connect();
+        $select = "select * from product limit $from,$to";
+        $result = $db->getList($select);
+        return $result;
+    }
+    // search san phẩm
+    function getSearchProduct($seachkey)
+    {
+        $db = new connect();
+        $select = "SELECT * FROM `product` WHERE `product_name` LIKE ' % ".$seachkey." % ' ";
+        $result = $db->getList($select);
         return $result;
     }
 
-    function getProductById($product_id) {
-        $select = "SELECT * FROM `product` WHERE `product_id`` = " . $product_id ;
-        $result = $this->db->getInstance($select);
+    //Update Sản phẩm
+    public function updateProduct($product_id, $name, $image, $price, $discount_price, $category_name, $detail){
+        $db = new connect();
+        $db->exec("update product set product_name = '$name', product_images = '$image', price = '$price' , discount_price = '$discount_price', category_name = '$category_name' , detail = '$detail' where product_id = '$product_id'");
+    }
+    
+    
+    // Lấy danh sách sản phẩm theo ID
+    public function getProductById($product_id){
+        $db = new connect();
+        return $db->getInstance("select * from product where product_id = $product_id");
+    }
+      
+    
+    // Lấy danh sách sản phẩm theo Name
+	 function getProductByName($name)
+    {
+        $db = new connect();
+        $select = "select * from product where name like '%$name%'";
+        $result=$db->getList($select);
         return $result;
+    } 
+    
+    // Xóa Sản phẩm
+    public function removeProduct($product_id){
+        $db = new connect();
+        $db->exec("delete from product where product_id = $product_id");
     }
 
-    function addProduct($param){
-        $sql = "INSERT INTO `product`(`product_id`, `product_name`, `product_images`, `description`, `price`, `discount_price`, `quantity`, `category_id`, `status`)"
-                . "VALUES ('".$param['product_name']."', "
-                . "'".$param['product_images']."', "
-                . "'".$param['description']."', "
-                . "'".$param['price']."', "
-                . "'".$param['discount_price']."', "
-                . "'".$param['quantity']."', "
-                . "'".$param['category_id']."', "
-                . "'".$param['status']."');";
-        $this->db->exec($sql);
-    }
-    function updateProduct($param) {
-        $sql = "UPDATE `product` SET `product_name`=".$param['product_name'].",`product_images`=".$param['product_images'].",`description`=".$param['description'].",`price`=".$param['price'].",`discount_price`=".$param['discount_price'].",`quantity`=".$param['quantity'].",`category_id`=".$param['category_id'].",`status`=".$param['status']." WHERE `product_id` = " . $param['product_id'] . ";";
-        $this->db->exec($sql);
-    }
 }
-
-
 ?>

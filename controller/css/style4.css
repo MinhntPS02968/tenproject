@@ -1,0 +1,310 @@
+body {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+}
+.wapper {
+			width:1600px;
+			height:auto;
+			margin:0 auto;
+				
+}
+
+
+header {
+			width:100%;
+			height:100px;
+			background-color:black;
+			
+				
+}
+
+header .logo {
+			width:100px;
+			height:40px;
+			float:left;	
+			margin:25px 25px 25px 25px;	
+}
+
+header .logo img {
+			width:100px;
+			height:40px;	
+}
+
+header .search {
+			width:550px;
+			height:50px;
+			float:left;
+			margin:25px 25px 25px 200px;	
+}
+
+header .search img {
+			width:550px;
+			height:50px;	
+}
+
+header .login p{
+			width:150px;
+			height:50px;
+			border:1px solid black;
+			text-align:center;
+			float:right;
+			font-weight:bold;
+			line-height:50px;
+			background-color:#FFF;
+			margin:25px 100px 25px 50px;
+				
+}
+
+header .signup p{
+			width:150px;
+			height:50px;
+			border:1px solid black;
+			text-align:center;
+			float:right;
+			
+			line-height:50px;
+			background-color:#FFF;
+			margin:25px 50px 25px 50px;
+		
+}
+
+.menu {
+			width:100%;
+			height:auto;
+			background-color:	#333;
+			
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.menu li {
+    float: left;
+}
+
+.menu li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.menu li.dropdown {
+    display: inline-block;
+}
+
+.menu .dropdown-content {
+    display: none;
+    position: absolute ;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 2;
+}
+
+.menu .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+	z-index: 2;
+}
+
+.menu .dropdown-content a:hover {background-color: #f1f1f1}
+
+.menu .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.quangcao {
+			width:100%;
+			height:600px;	
+			margin:0 auto;
+}
+
+
+
+.slideshow {
+			background-color:#0F0;
+			width:1000px;
+			height:500px;
+			float:left;
+			margin:50px;
+			
+}
+
+.banner {
+			background-color:yellow;
+			width:400px;
+			height:240px;
+			float:right;
+			margin:50px 50px 0px 0px;
+			
+}
+
+.banner img {
+			width:400px;
+			height:240px;	
+}
+
+.banner2 {
+			background-color:yellow;
+			width:400px;
+			height:240px;
+			float:right;
+			margin:20px 50px 50px 0px;
+			
+}
+
+.banner2 img {
+			width:400px;
+			height:240px;	
+}
+
+
+
+
+footer {
+			width:1600px;;
+			height:400px;	
+			padding-top:50px;
+			margin:auto;
+}
+
+.footer1 {
+			margin-top:50px;
+			width:23%;
+			float:left;
+				
+			
+}
+
+.footer2 {
+			width:18%;
+			float:left;
+			
+}
+
+.footer3 {
+			width:18%;
+			float:left;	
+}
+
+.footer4 {
+			width:18%;
+			float:left;	
+}
+
+.footer5 {
+			width:23%;
+			float:left;	
+}
+
+.footer5 img {
+			float:left;	
+}
+
+.footer5 img:hover{
+			animation: icon 1s ease both;
+}
+
+@-webkit-keyframes icon {
+	0% { opacity: 0; -webkit-transform:  perspective(100px) rotateX(0deg);}
+    100% { opacity: 1; -webkit-transform: perspective(100px) rotateX(360deg);}
+}
+@-moz-keyframes icon {
+	0% { opacity: 0; -moz-transform:  perspective(100px) rotateX(0deg);}
+    100% { opacity: 1; -moz-transform: perspective(100px) rotateX(360deg);}
+}
+@keyframes icon {
+	0% { opacity: 0; transform:  perspective(100px) rotateX(0deg);}
+    100% { opacity: 1; transform: perspective(100px) rotateX(360deg);}
+}
+
+.footer5 ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			
+}
+
+.footer5 li {
+			width:200px;
+			height:50px;
+			text-align:center;
+			line-height:50px;	
+}
+
+figure {
+			width:25%;
+			height:400px;
+			background-color:white;
+			float:left;	
+			text-align:center;
+			margin:0px;
+			
+}
+
+figure img {
+			width:300px;
+			height:250px;
+			
+				
+}
+
+figcaption span {
+			color:#F00;	
+			font-weight:bold;
+			
+}
+
+.ttsp {
+			width:100%;
+			height:auto;	
+}
+
+.muahang {
+			width:100%;
+			height:30px;
+			margin-top:450px;
+			text-align:center;	
+}
+
+figcaption a {
+			
+			padding:15px;
+			font-size:16px;
+			font-weight:bold;
+			background-color:white;
+			text-decoration: none;
+			color:black;			
+}
+
+figcaption a:hover {
+			
+			background: red;
+			color:#FFF;
+			
+				
+}
+
+
+a {
+			text-decoration: none;	
+}
+
+.content {
+			margin:auto;	
+}
+

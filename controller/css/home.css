@@ -1,0 +1,19 @@
+body { background: url("../images/bk.png");
+background-position:top center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+}
+ .wrapper-box {
+margin:0px auto;
+}
+#back-top a {
+bottom:0px;
+}
+ .custom-feature-box .feature-box .title {
+font-weight:bold;
+}
+ .custom-feature-box .feature-box .title {
+text-transform:uppercase;
+}
+  @media screen and (max-width:800px) {
+}
